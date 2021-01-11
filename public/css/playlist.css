@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+  font-family: "Montserrat", sans-serif;
+}
+::selection {
+  color: #5400a4;
+  /* background: rgba(255, 255, 255, 0); */
+  text-shadow: 0px 0px 4px #7600e8;
+}
+body {
+  background-color: #f0f0f3;
+  overflow: hidden;
+}
+input[type="range"] {
+  width: 100%;
+  margin: 2.35px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(101, 0, 198, 0.8);
+  border: 0;
+  border-radius: 25px;
+  width: 100%;
+  height: 5.3px;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -2.35px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 1.3px solid #00001e;
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #6500c6;
+}
+input[type="range"]::-moz-range-track {
+  background: rgba(101, 0, 198, 0.8);
+  border: 0;
+  border-radius: 25px;
+  width: 100%;
+  height: 5.3px;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 1.3px solid #00001e;
+  border-radius: 30px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 16.85px 0;
+  color: transparent;
+  width: 100%;
+  height: 5.3px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #6500c6;
+  border: 0;
+  border-radius: 50px;
+}
+input[type="range"]::-ms-fill-upper {
+  background: rgba(101, 0, 198, 0.8);
+  border: 0;
+  border-radius: 50px;
+}
+input[type="range"]::-ms-thumb {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 1.3px solid #00001e;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: rgba(101, 0, 198, 0.8);
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #6500c6;
+}
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align: auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type="range"] {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
+}
+.music-wave {
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 30%;
+  display: none;
+  /* background-color: bisque; */
+}
+
+#video-placeholder {
+  background-color: blue;
+  height: 20px;
+  display: none;
+}
+.player-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  border-radius: 12px;
+  background: #f0f0f3;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 5px 5px 10px #cccccf, -5px -5px 10px #ffffff;
+}
+.controls {
+  display: flex;
+  padding: 20px 20px 20px 20px;
+}
+.controls div {
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-overflow: clip;
+  overflow: hidden;
+  font-weight: 900;
+  font-size: 20px;
+  height: 23px;
+}
+.title-image {
+  /* background-color: violet; */
+  text-align: center;
+}
+/* .title-image img {
+  background: #f0f0f3;
+  box-shadow: inset 5px 5px 10px #cccccf, inset -5px -5px 10px #ffffff;
+} */
+.playing {
+  /* border-radius: 50%; */
+  filter: drop-shadow(0px 0px 5px black);
+  animation: rotate 5s infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.video-link {
+  width: 60%;
+  height: 40px;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 5px;
+  padding-left: 20px;
+  background: #f0f0f3;
+  box-shadow: inset 5px 5px 10px #cccccf, inset -5px -5px 10px #ffffff;
+}
+.forming-links {
+  /* overflow: hidden; */
+  width: 100%;
+  display: flex;
+  position: relative;
+  top: 30px;
+  left: 10%;
+}
+.video-button {
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #f0f0f3;
+  box-shadow: 5px 5px 10px #cccccf, -5px -5px 10px #ffffff;
+  transition: 0.3s;
+}
+.video-button:hover {
+  /* border-radius: 50%; */
+  background: linear-gradient(145deg, #d8d8db, #ffffff);
+  box-shadow: 5px 5px 10px #cccccf, -5px -5px 10px #ffffff;
+}
+.video-button:active {
+  /* border-radius: 50%; */
+  background: #f0f0f3;
+  box-shadow: inset 5px 5px 10px #cccccf, inset -5px -5px 10px #ffffff;
+}
+.channel-title {
+  /* background-color: blueviolet; */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 900;
+  opacity: 30%;
+}
+.gohome {
+  overflow: hidden;
+  font-size: 1.875rem;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background: #f0f0f3;
+  box-shadow: 5px 5px 10px #cccccf, -5px -5px 10px #ffffff;
+  padding: 15px 20px 15px 20px;
+  border-radius: 50%;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+.gohome:hover {
+  background: linear-gradient(145deg, #d8d8db, #ffffff);
+  box-shadow: 5px 5px 10px #cccccf, -5px -5px 10px #ffffff;
+}
+.gohome:active {
+  background: #f0f0f3;
+  box-shadow: inset 5px 5px 10px #cccccf, inset -5px -5px 10px #ffffff;
+}
+.subtitles {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9375rem;
+  font-weight: bolder;
+  background-color: #f3f3f3;
+  color: #00001e;
+}

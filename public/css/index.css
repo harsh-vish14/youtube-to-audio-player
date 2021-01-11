@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+.nav-item .nav-link {
+  text-overflow: ellipsis;
+}
+::selection {
+  color: #5400a4;
+  /* background: rgba(255, 255, 255, 0); */
+  text-shadow: 0px 0px 4px #7600e8;
+}
+.cursor {
+  /* z-index: 0; */
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid black;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+  transition-property: background, transform;
+  pointer-events: none;
+}
+.player iframe {
+  position: relative;
+  top: 0px;
+  width: 0px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.fa-play {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#scene {
+  /* display: contents; */
+  /* z-index: 0; */
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+  background-color: #6500c6;
+  margin-bottom: -20px;
+}
+
+#scene div img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  /* object-position: center; */
+}
+.not-scrolled {
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  background-color: rgba(0, 0, 255, 0);
+  position: fixed;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.nav-scrolled {
+  background-color: #6500c6;
+  color: white;
+}
+.collapse {
+  transition: 0.2s;
+  margin-left: 50%;
+}
+.collapse a {
+  /* width: max-content !important; */
+  margin-left: 1rem;
+}
+.link-grow {
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(148, 97, 196, 0.322);
+  border: none;
+}
+.active {
+  font-weight: 800;
+}
+.active:hover,
+.nav-item:hover {
+  font-weight: 900;
+  transition: 0.1s;
+}
+.form-group input {
+  border: none;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-top: -10px;
+  color: white;
+  padding-top: 1.25rem;
+  width: 42%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -49%);
+  background: #6500c6;
+  box-shadow: inset 5px 5px 10px #5400a4, inset -5px -5px 10px #7600e8;
+}
+.form-group input::placeholder {
+  color: white;
+}
+.form-group button {
+  color: whitesmoke;
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, -49%);
+  /* border-radius: 50px; */
+  background: #6500c6;
+  box-shadow: 5px 5px 10px #5600a8, -5px -5px 10px #7400e4;
+}
+.form-group button:active {
+  /* border-radius: 50px; */
+  background: #6500c6;
+  box-shadow: inset 5px 5px 10px #5600a8, inset -5px -5px 10px #7400e4;
+}
+.fa-play input ::placeholder {
+  color: white;
+}
+.heading {
+  font-size: 1.875rem;
+  font-weight: 900;
+  text-align: center;
+  color: whitesmoke;
+}
+#para {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5625rem;
+  /* color: rgb(255, 255, 255); */
+}
+lottie-player {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.socile a i {
+  color: white;
+}
+.socile {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 1.25rem;
+  left: 1.25rem;
+}
+.playList {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .cursor {
+    display: none;
+  }
+  .bg {
+    display: none;
+  }
+  .heading {
+    color: black;
+  }
+  #para {
+    color: rgb(0, 0, 0);
+  }
+}
+@media (max-width: 1000px) {
+  .form-group input {
+    bottom: 18%;
+  }
+  .form-group button {
+    bottom: 10%;
+  }
+  .collapse {
+    margin-left: 0px;
+  }
+}

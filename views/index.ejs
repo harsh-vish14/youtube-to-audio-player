@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/logo.svg" type="image/x-icon">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="elements"
+        style="position: fixed; top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 10;background-color: whitesmoke;height: 100%;width: 100%;overflow: hidden;">
+        <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_k2RVBb.json"
+            background="rgba(0, 0, 0, 0)" speed="1"
+            style="width: 300px; height: 300px;position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%);overflow: hidden;"
+            loop autoplay>
+        </lottie-player>
+        <h2 style="position: absolute; top: 80%;left: 50%;transform: translate(-50%,-50%);overflow: hidden;">
+            Loading....
+        </h2>
+
+    </div>
+    <div class="cursor" style="z-index: 1;"></div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+        style="border-radius: 50%;position: fixed;bottom: 20px;right: 20px;z-index: 10;" title="problem Report">
+        <i style="overflow: hidden;" class="fa fa-bug" aria-hidden="true"></i>
+    </button>
+    <!--report Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Report Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label>Name: </label>
+                        <input type="name" class="form-control" name="" id="" aria-describedby="emailHelpId"
+                            placeholder="Name..">
+                        <label>Email</label>
+                        <input type="name" class="form-control" name="" id="" aria-describedby="emailHelpId"
+                            placeholder="Email..">
+                        <label>problem Found</label>
+                        <textarea class="form-control" name="" id="" rows="3"
+                            placeholder="Descriptions of Problem Founded......"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Report Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Model -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="height: 100vh;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label>Email</label>
+                        <input type="name" class="form-control" name="" id="Login-Email-Id"
+                            aria-describedby="emailHelpId" placeholder="Email..">
+                        <label>Password:</label>
+                        <input type="password" name="" id="Login-Password" class="form-control"
+                            placeholder="Password...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="login()">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SignIn Model -->
+    <div class="modal fade" id="SignInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="height: 100vh;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label>Email</label>
+                        <input type="name" class="form-control" name="" id="Sign-Email-Id"
+                            aria-describedby="emailHelpId" placeholder="Email..">
+                        <label>Password:</label>
+                        <input type="password" name="" id="Sign-Email-Password" class="form-control"
+                            placeholder="Password....">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="signIn()">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar start-->
+    <!-- TODO: Navbar -->
+    <nav class="not-scrolled navbar navbar-expand-md">
+        <a class="navbar-brand" href="/" style="color: white;"><img src="images/logo.svg"
+                style="height: 50px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- TODO: Button -->
+            <div id="lottie-menu" style="height: 60px;width: 100px;filter: invert();"></div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active px-3">
+                    <a class="nav-link" href="/" style="color: white;">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdDRaWHNKNVNVT4p5gIf-9h9DvN8fhfpaQAQsWUb-b-ngGzQQ/viewform?usp=sf_link" target="_blank" style="color: white;">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#LoginModal" href="#" style="color: white;"
+                        id="logged_in">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#SignInModal" href="#" style="color: white;"
+                        id="Signed_in">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/playList" style="color: white;" id="playList">Play List</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- main body start -->
+    <section class="header" style="overflow: hidden;">
+        <div id="scene">
+            <div data-depth="0.2"><img data-aos="zoom-in" data-aos-duration="3000" src="images/1.png"></div>
+            <div data-depth="0.3"><img data-aos="zoom-in" data-aos-duration="3000" src="images/2.png" alt=""></div>
+            <div data-depth="0.1"><img data-aos="zoom-in" data-aos-duration="3000" src="images/3.png"></div>
+            <div data-depth="0.4"><img data-aos="zoom-in" data-aos-duration="3000" src="images/4.png" alt=""></div>
+            <div data-depth="0.2"><img data-aos="zoom-in" data-aos-duration="3000" src="images/5.png"></div>
+            <div data-depth="0.5"><img data-aos="zoom-in" data-aos-duration="3000" src="images/6.png" alt=""></div>
+            <div data-depth="0.0"><img src="images/radio.png" alt=""></div>
+        </div>
+        <h1
+            style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);color: white;font-weight: bolder;overflow: hidden;">
+            Play Your YouTube <span style="color: pink;">Ads
+                Free</span>
+        </h1>
+        <div class="form-group" data-depth="0.0">
+            <input type="text" placeholder="Link Here..." class="home-link">
+            <button class="add_it" onclick="saveHome()">Add IT</button>
+        </div>
+    </section>
+    <section class="main">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;z-index:-1;"
+            class="bg">
+            <path fill="#6500c6" fill-opacity="1" style="transition: .2s;"
+                d="M0,320L40,298.7C80,277,160,235,240,229.3C320,224,400,256,480,245.3C560,235,640,181,720,154.7C800,128,880,128,960,106.7C1040,85,1120,43,1200,58.7C1280,75,1360,149,1400,186.7L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+            </path>
+        </svg>
+        <div class="container-fluid">
+            <div class="container">
+                <h4 class="heading">Online YouTube Player</h4>
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-duration="2000">
+                        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_xNAV0g.json"
+                            background="transparent" speed="1" style="width: 300px; height: 300px;overflow: hidden;"
+                            loop autoplay>
+                        </lottie-player>
+                    </div>
+                    <div class="col-lg-6" style="overflow: hidden;" data-aos="fade-left" data-aos-duration="2000">
+                        <p id="para" class="text">
+                            Provide the link you want to save it as playlist we will save it and convert that to
+                            audio
+                            files
+                            and Play as audio file in this website.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="container">
+                    <h4 class="heading" style="color:black;">Are You Bored With ads on youTube</h4>
+                    <div class="row">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="2000">
+                            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_Zr7vor.json"
+                                background="transparent" speed="1" style="width: 300px; height: 300px;overflow: hidden;"
+                                loop autoplay>
+                            </lottie-player>
+                        </div>
+                        <div class="col-lg-6" style="overflow: hidden;" data-aos="fade-left">
+                            <p id="para" class="text" style="color: black;">
+                                Here Just give your favorite Video Link we will change that video to audio and made
+                                it
+                                ads
+                                free.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="features">
+        <div class="container-fluid">
+            <h4 class="heading" style="color: black;">Features Of Our Website</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6" data-aos="zoom-in">
+                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_EAfMOs/Youtube.json"
+                            background="transparent" speed="1" style="width: 300px; height: 300px;overflow: hidden;"
+                            loop autoplay>
+                        </lottie-player>
+                        <h6 style="text-align: center;">Get ADs Free Audio Songs play</h6>
+                    </div>
+                    <div class="col-lg-6" data-aos="zoom-in">
+                        <lottie-player src="https://assets9.lottiefiles.com/datafiles/uLmeWFRtCwUdQSm/data.json"
+                            background="transparent" speed="1.5" style="width: 300px; height: 300px;overflow: hidden;"
+                            loop autoplay>
+                        </lottie-player>
+                        <h6 style="text-align: center;">Works In Any Devices</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="background-color: black;color: white;height: 100px;overflow: hidden;text-align: center;">
+        Copyrights to <i class="fa fa-copyright" aria-hidden="true" style="overflow: hidden;"></i> Harshkumar Vishwakarma
+        <br>
+        <div class="socile" style="position: relative;top: 20px;left: 10px;">
+            <a href="#"><i style="overflow: hidden;" class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i style="overflow: hidden;" class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="#"><i style="overflow: hidden;" class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+    <!-- main body end -->
+
+    <!-- scrips start -->
+    <!-- parallax.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
+    </script>
+
+    <!-- aos animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script>
+        window.animation = window.lottie.loadAnimation({
+
+            container: document.getElementById('lottie-menu'),
+
+            path: 'https://assets1.lottiefiles.com/packages/lf20_r1OnTJ.json',
+
+            renderer: 'svg',
+
+            loop: false,
+
+            autoplay: false,
+
+        });
+        var notClicked = true;
+        document.querySelector('#lottie-menu').addEventListener('click', function () {
+            if (notClicked) {
+                animation.playSegments([0, 26], true);
+                notClicked = false;
+            } else {
+                animation.playSegments([26, 0], true);
+                notClicked = true;
+            }
+        })
+    </script>
+    <script>
+        $(window).scroll(function () {
+            $('nav').toggleClass('nav-scrolled', $(this).scrollTop() > 300);
+        })
+    </script>
+    <script>
+    </script>
+    <script src="cousor.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+    <script src="new_index.js"></script>
+    <script>
+        auth.onAuthStateChanged(function (user) {
+            if (user) {
+                document.querySelector('#Signed_in').style.display = 'none';
+                document.querySelector('#logged_in').style.display = 'none';
+                document.querySelector('#playList').style.display = '';
+            } else {
+                document.querySelector('#Signed_in').style.display = '';
+                document.querySelector('#logged_in').style.display = '';
+                document.querySelector('#playList').style.display = 'none';
+            }
+        })
+    </script>
+    <script>
+        setTimeout(function () {
+            document.querySelector('.elements').style.display = 'none'
+        }, 1000)
+    </script>
+</body>
+
+</html>
