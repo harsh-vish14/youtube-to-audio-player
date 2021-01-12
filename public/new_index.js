@@ -6,7 +6,7 @@ console.log(auth);
 var notClicked = true;
 var email, password;
 var music = document.querySelector('.youtube-video');
-console.log();
+// console.log();
 var userID;
 var playlistLinks = {};
 var number = 0;
@@ -206,9 +206,18 @@ function saveHome() {
     // newLinks = []
     if (url != null || url != '') {
         console.log(url);
-        playlistLinks[Object.keys(playlistLinks).length] = url.split("v=")[1].substring(0, 11);
-        document.querySelector('.home-link').value = '';
-        addToDatabase(url.split("v=")[1].substring(0, 11));
+        console.log(url.includes("v="));
+        if (url.includes("v=")) {
+            playlistLinks[Object.keys(playlistLinks).length] = url.split("v=")[1].substring(0, 11);
+            document.querySelector('.home-link').value = '';
+            addToDatabase(url.split("v=")[1].substring(0, 11));
+            console.log("new url"+url.split("v=")[1].substring(0, 11));
+        } else {
+            playlistLinks[Object.keys(playlistLinks).length] = url.split("youtu.be/")[1].substring(0, 11);
+            document.querySelector('.home-link').value = '';
+            addToDatabase(url.split("youtu.be/")[1].substring(0, 11));
+            console.log("new url"+url.split("youtu.be/")[1].substring(0, 11));
+        }
         window.location.replace("/playList");
     } else {
         alert('provide The Correct Link');
@@ -219,11 +228,20 @@ function SaveItPlaylist() {
     
     // newLinks = []
 
-    if (url != null) {
+    if (url != null || url != '') {
         console.log(url);
-        playlistLinks[Object.keys(playlistLinks).length] = url.split("v=")[1].substring(0, 11);
-        document.querySelector('.video-link').value = '';
-        addToDatabase(url.split("v=")[1].substring(0, 11));
+        console.log(url.includes("v="));
+        if (url.includes("v=")) {
+            playlistLinks[Object.keys(playlistLinks).length] = url.split("v=")[1].substring(0, 11);
+            addToDatabase(url.split("v=")[1].substring(0, 11));
+            console.log("new url" + url.split("v=")[1].substring(0, 11));
+        } else {
+            playlistLinks[Object.keys(playlistLinks).length] = url.split("youtu.be/")[1].substring(0, 11);
+            addToDatabase(url.split("youtu.be/")[1].substring(0, 11));
+            console.log("new url" + url.split("youtu.be/")[1].substring(0, 11));
+            // document.querySelector('.home-link').value = ' ';
+        }
+        //  document.querySelector('.home-link').value = "";
         location.reload();
     } else {
         alert('provide The Correct Link');
