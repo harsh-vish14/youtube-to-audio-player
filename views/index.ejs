@@ -16,7 +16,6 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <script>
         if ('serviceWorker' in navigator) {
@@ -132,7 +131,7 @@
     </div>
     <!-- navbar start-->
     <!-- TODO: Navbar -->
-    <nav class="not-scrolled navbar navbar-expand-md" data-title="Navigation bar" data-intro="This is navigation bar to translate to new pages">
+    <nav class="not-scrolled navbar navbar-expand-md">
         <a class="navbar-brand" href="/" style="color: white;"><img src="images/logo.svg"
                 style="height: 50px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -181,11 +180,11 @@
                 Free</span>
         </h1>
         <div class="form-group" data-depth="0.0">
-            <input type="text" placeholder="Link Here..." class="home-link" data-title="Input link" data-intro="Put the YouTube video link here!">
-            <button class="add_it" onclick="saveHome()" data-title="save button" data-title="click this button after providing the link">Add IT</button>
+            <input type="text" placeholder="Link Here..." class="home-link">
+            <button class="add_it" onclick="saveHome()">Add IT</button>
         </div>
     </section>
-    <section class="main" data-title="intro" data-intro="this is small introduction for the application">
+    <section class="main">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute;z-index:-1;"
             class="bg">
             <path fill="#6500c6" fill-opacity="1" style="transition: .2s;"
@@ -267,11 +266,7 @@
         </div>
     </footer>
     <!-- main body end -->
-    <script src="https://unpkg.com/intro.js/minified/intro.min.js" type="text/javascript"></script>
-    <script>
-        introJs().start();
-        // console.log("done");
-    </script>
+<script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
     <!-- scrips start -->
     <!-- parallax.min.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
