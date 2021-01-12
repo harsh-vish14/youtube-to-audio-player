@@ -1,4 +1,4 @@
-const firebaseConfig = chabi();
+const firebaseConfig = { apiKey: "AIzaSyCf9rsyLv7kGfuLJL4y56oLBk0GtKqKP8s", authDomain: "to-audio.firebaseapp.com", databaseURL: "https://to-audio.firebaseio.com", projectId: "youtube-to-audio", storageBucket: "youtube-to-audio.appspot.com", messagingSenderId: "131106559443", appId: "1:131106559443:web:8933da11d4a2e694120b26", measurementId: "G-JKPVVFPP5F" };
 const db =  firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 console.log(db);
@@ -326,7 +326,4 @@ function banner(vid) {
             var video_images = data["items"][0]['snippet']['thumbnails']['maxres']['url'];
             document.querySelector(".title-image").innerHTML = '<img src="' + video_images + '"style="width: 150px;height: 150px;border-radius:50%">'
         })
-}
-function chabi() {
-    return { apiKey: "AIzaSyCf9rsyLv7kGfuLJL4y56oLBk0GtKqKP8s", authDomain: "to-audio.firebaseapp.com", databaseURL: "https://to-audio.firebaseio.com", projectId: "youtube-to-audio", storageBucket: "youtube-to-audio.appspot.com", messagingSenderId: "131106559443", appId: "1:131106559443:web:8933da11d4a2e694120b26", measurementId: "G-JKPVVFPP5F" };
 }
