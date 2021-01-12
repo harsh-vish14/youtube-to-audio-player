@@ -15,6 +15,10 @@
   /* background: rgba(255, 255, 255, 0); */
   text-shadow: 0px 0px 4px #7600e8;
 }
+input::selection{
+  color: white;
+  text-shadow: 0px 0px 4px #7600e8;
+}
 .cursor {
   /* z-index: 0; */
   width: 3rem;
