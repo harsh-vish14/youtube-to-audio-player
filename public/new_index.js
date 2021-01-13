@@ -1,4 +1,6 @@
-const firebaseConfig = { apiKey: "AIzaSyCf9rsyLv7kGfuLJL4y56oLBk0GtKqKP8s", authDomain: "to-audio.firebaseapp.com", databaseURL: "https://to-audio.firebaseio.com", projectId: "youtube-to-audio", storageBucket: "youtube-to-audio.appspot.com", messagingSenderId: "131106559443", appId: "1:131106559443:web:8933da11d4a2e694120b26", measurementId: "G-JKPVVFPP5F" };
+const firebaseConfig = {
+//     provide the api keys from the firebase i am hiding that part
+};
 const db =  firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 console.log(db);
